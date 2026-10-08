@@ -16,3 +16,21 @@ nav {
   padding: 1rem;
   border-bottom: 1px solid #ddd;
 }
+
+.categories {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1rem;
+}
+
+.categories li {
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.categories span {
+  color: #666;
+}
