@@ -9,3 +9,10 @@ main {
   margin: 0 auto;
   padding: 2rem 1rem;
 }
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
