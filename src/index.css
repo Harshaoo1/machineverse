@@ -34,3 +34,47 @@ nav {
 .categories span {
   color: #666;
 }
+
+.levels,
+.component-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.levels button {
+  text-transform: capitalize;
+}
+
+button[aria-pressed='true'] {
+  background: #222;
+  color: #fff;
+}
+
+.info-panel {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+}
+
+.draft-note {
+  color: #8a5a00;
+}
+
+.safety-note {
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #c0392b;
+  background: #fdf0ee;
+}
