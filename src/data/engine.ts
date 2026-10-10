@@ -129,4 +129,109 @@ export const engineComponents: EngineComponent[] = [
     status: 'draft',
     sources: [],
   },
+
+    {
+    id: 'cylinder-block',
+    name: 'Cylinder block',
+    systemId: 'engine-structure',
+    location:
+      'The large central casting of the engine. The cylinder head bolts on top of it and the oil pan bolts underneath.',
+    summary:
+      'The main body of the engine, containing the cylinders and holding the crankshaft.',
+    explanation: {
+      beginner:
+        'The engine block is the heavy metal body of the engine. It contains the cylinders where the pistons move, and almost everything else attaches to it. Think of it as the skeleton of the engine.',
+      intermediate:
+        'The block is a single casting that contains the cylinder bores, the supports for the crankshaft bearings, and passages for coolant and oil. The cylinder head is bolted on top, sealed by a head gasket, and the oil pan is fitted below. Coolant flows through passages around the cylinders, called water jackets, to carry heat away.',
+      advanced:
+        'Blocks are made of cast iron or aluminium alloy. Aluminium is lighter and sheds heat well, and usually has iron liners or a hard coating in the bores. The block must resist the combustion pressure that tries to lift the head off and the loads that the crankshaft passes into the main bearing caps. The bore (cylinder diameter) and stroke (piston travel) set the displacement of the engine. Closed-deck designs, where the top of the water jacket is supported, are stronger and are often chosen for engines that run high boost.',
+    },
+    whyItExists:
+      'The engine needs a rigid, sealed structure that holds the cylinders and the crankshaft in exact alignment and contains the pressure of combustion.',
+    relatedIds: ['piston', 'crankshaft', 'cylinder-head'],
+    ifItFails: {
+      effect:
+        'Cracks or a warped top surface let coolant, oil and combustion gases leak into places they should not be. A cracked block usually means replacing the engine.',
+      symptoms: [
+        'Coolant level dropping with no visible leak',
+        'White smoke from the exhaust',
+        'Milky, light-brown residue under the oil filler cap or on the dipstick',
+        'Engine overheating',
+        'Visible oil or coolant leaks',
+      ],
+    },
+    safetyNote:
+      'Never open the radiator or coolant cap on a hot engine. The coolant is under pressure and can cause severe scalds.',
+    status: 'draft',
+    sources: [],
+  },
+  {
+    id: 'cylinder-head',
+    name: 'Cylinder head',
+    systemId: 'engine-structure',
+    location: 'Bolted to the top of the engine block, sealed by the head gasket.',
+    summary:
+      'The top section of the engine that closes the cylinders and holds the valves, camshafts and spark plugs.',
+    explanation: {
+      beginner:
+        'The cylinder head is the lid of the engine. It sits on top of the block and closes the top of each cylinder. It also holds the valves that let air in and exhaust out, and the spark plugs that light the fuel.',
+      intermediate:
+        'The head contains the combustion chambers, the intake and exhaust ports, the valves and, in most modern engines, the camshafts. Coolant and oil passages run through it. A head gasket between the head and the block keeps combustion pressure, coolant and oil sealed from each other. The head bolts are tightened in a set order to a set torque so that the head clamps down evenly.',
+      advanced:
+        'Many modern heads are aluminium alloy with a dual overhead camshaft (DOHC) layout and four valves per cylinder, which improves airflow compared with older two-valve designs. The shape of the ports and chambers controls how the air swirls and tumbles, which affects burn speed and resistance to knock. The head has to stay flat, and overheating can warp it and let the gasket leak. Head bolts are often torque-to-yield designs that stretch slightly and are meant to be used only once.',
+    },
+    whyItExists:
+      'The combustion chamber needs a closed top with openings that can be opened and shut, so that air and fuel can get in and exhaust gases can get out at the right moments.',
+    relatedIds: ['cylinder-block', 'spark-plug'],
+    ifItFails: {
+      effect:
+        'A warped head or a failed head gasket lets combustion gas, coolant and oil mix or escape. Left unfixed, it usually leads to overheating and serious engine damage.',
+      symptoms: [
+        'Engine overheating',
+        'White smoke from the exhaust',
+        'Bubbles in the coolant reservoir',
+        'Milky residue under the oil filler cap or on the dipstick',
+        'Coolant level dropping with no visible leak',
+        'Loss of power',
+      ],
+    },
+    safetyNote:
+      'Do not open the coolant cap while the engine is hot. The coolant is under pressure and can cause severe scalds.',
+    status: 'draft',
+    sources: [],
+  },
+  {
+    id: 'spark-plug',
+    name: 'Spark plug',
+    systemId: 'ignition',
+    location:
+      'Screwed into the cylinder head, with its tip inside the combustion chamber of each cylinder.',
+    summary: 'A small device that creates an electric spark to ignite the fuel-air mixture.',
+    explanation: {
+      beginner:
+        'The spark plug is a small part screwed into each cylinder. At exactly the right moment it makes an electric spark, which lights the mixture of fuel and air and starts the burn that pushes the piston down.',
+      intermediate:
+        'An ignition coil supplies the plug with a very high voltage, in the tens of thousands of volts. The voltage jumps the small gap between the centre electrode and the ground electrode as a spark. The engine computer decides when the spark happens, a little before the piston reaches the top of its stroke, so that the peak of the pressure arrives at the right moment. Plugs wear over time as the electrodes erode and the gap widens.',
+      advanced:
+        'The heat range of a plug describes how quickly it sheds heat. A hotter plug keeps more heat and burns off deposits, while a colder plug runs cooler and resists pre-ignition. Engines making more power or running boost generally need a colder heat range and a smaller gap, because higher cylinder pressure makes it harder for the spark to jump and raises the risk of misfire. Iridium and platinum electrodes last longer than copper ones.',
+    },
+    whyItExists:
+      'A petrol engine needs a precisely timed ignition source, because the compressed mixture does not reliably light by itself at the right moment.',
+    relatedIds: ['cylinder-head', 'piston'],
+    ifItFails: {
+      effect:
+        'A worn or fouled plug can fail to light the mixture, which is called a misfire. The unburnt fuel wastes energy and can damage the catalytic converter over time.',
+      symptoms: [
+        'Rough idle or shaking',
+        'Hesitation or jerking when accelerating',
+        'Hard starting',
+        'Poor fuel economy',
+        'Flashing check-engine light during a misfire',
+      ],
+    },
+    safetyNote:
+      'The ignition system carries very high voltage. Do not touch the coils or plug leads while the engine is running or being cranked, and let a hot engine cool before touching any part of it.',
+    status: 'draft',
+    sources: [],
+  },
 ]
