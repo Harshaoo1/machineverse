@@ -51,7 +51,7 @@ export const engineComponents: EngineComponent[] = [
     },
     whyItExists:
       'Combustion creates pressure, and the piston is the part that turns that pressure into a force that can do useful work.',
-    relatedIds: ['connecting-rod', 'crankshaft'],
+    relatedIds: ['connecting-rod', 'crankshaft', 'cylinder-block', 'spark-plug'],
     ifItFails: {
       effect:
         "Worn rings or a damaged piston reduce the engine's compression and let oil into the combustion chamber. Severe damage can destroy the engine.",
@@ -113,7 +113,7 @@ export const engineComponents: EngineComponent[] = [
     },
     whyItExists:
       'Power has to leave the engine as rotation so that it can drive the wheels, so the straight-line motion of the pistons must be converted.',
-    relatedIds: ['piston', 'connecting-rod'],
+    relatedIds: ['piston', 'connecting-rod', 'cylinder-block', 'camshaft', 'timing-drive'],
     ifItFails: {
       effect:
         'Worn main bearings cause knocking and low oil pressure. A broken crankshaft stops the engine at once and usually means replacing the engine or a full rebuild.',
@@ -182,7 +182,7 @@ export const engineComponents: EngineComponent[] = [
     },
     whyItExists:
       'The combustion chamber needs a closed top with openings that can be opened and shut, so that air and fuel can get in and exhaust gases can get out at the right moments.',
-    relatedIds: ['cylinder-block', 'spark-plug'],
+    relatedIds: ['cylinder-block', 'spark-plug', 'camshaft', 'valves', 'intake-manifold', 'fuel-injector', 'exhaust-manifold'],
     ifItFails: {
       effect:
         'A warped head or a failed head gasket lets combustion gas, coolant and oil mix or escape. Left unfixed, it usually leads to overheating and serious engine damage.',
@@ -217,7 +217,7 @@ export const engineComponents: EngineComponent[] = [
     },
     whyItExists:
       'A petrol engine needs a precisely timed ignition source, because the compressed mixture does not reliably light by itself at the right moment.',
-    relatedIds: ['cylinder-head', 'piston'],
+    relatedIds: ['cylinder-head', 'piston', 'fuel-injector'],
     ifItFails: {
       effect:
         'A worn or fouled plug can fail to light the mixture, which is called a misfire. The unburnt fuel wastes energy and can damage the catalytic converter over time.',
@@ -284,7 +284,7 @@ export const engineComponents: EngineComponent[] = [
     },
     whyItExists:
       'The combustion chamber has to be sealed during compression and combustion but open at other times to exchange gases, and valves are the openings that can do both.',
-    relatedIds: ['camshaft', 'cylinder-head'],
+    relatedIds: ['camshaft', 'cylinder-head', 'intake-manifold', 'exhaust-manifold'],
     ifItFails: {
       effect:
         'A valve that does not seal properly leaks compression and can burn through. A bent or broken valve can destroy the piston and the cylinder head.',
