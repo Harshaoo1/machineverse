@@ -2,6 +2,7 @@ import { useState } from 'react'
 import InfoPanel from '../components/InfoPanel'
 import { engineComponents } from '../data/engine'
 import type { Level } from '../data/types'
+import EngineViewer from '../components/EngineViewer'
 
 const levels: Level[] = ['beginner', 'intermediate', 'advanced']
 
@@ -14,6 +15,7 @@ function VehiclePage() {
   return (
     <>
       <h1>Generic Car: Engine</h1>
+      <EngineViewer />
 
       <div role="group" aria-label="Explanation level" className="levels">
         {levels.map((option) => (
