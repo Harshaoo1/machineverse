@@ -1,75 +1,37 @@
-# React + TypeScript + Vite
+# MachineVerse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Understand. Explore. Experiment.**
 
-Currently, two official plugins are available:
+An interactive platform for learning how machines work. The first version focuses on one vehicle, a generic petrol inline-4 car, combining a 3D model, a structured knowledge base, a guided diagnostic flow and a simple educational simulator.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**Live demo:** https://machineverse.vercel.app/
 
-## React Compiler
+## Status
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Early development. Built so far: home page, category cards, a vehicle page placeholder, routing and automatic deployment. Next: structured engine data, then an interactive 3D engine.
 
-## Expanding the ESLint configuration
+## Planned features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Explore:** click engine components in 3D and read explanations at Beginner, Intermediate or Advanced level
+- **Diagnose:** a guided "engine won't start" flow that highlights the related components
+- **Experiment:** an educational "add a turbo" simulator with clearly labelled assumptions (estimates, not engineering-grade results)
+- **Learn:** a short beginner learning path
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+See [docs/MVP.md](docs/MVP.md) for the scope and [docs/DECISIONS.md](docs/DECISIONS.md) for the reasoning behind each choice.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+React, TypeScript, Vite and React Router, deployed on Vercel. 3D will use Three.js with React Three Fiber.
 
+## Run it locally
+
+Requires Node.js (LTS).
+
+```bash
+git clone https://github.com/Harshaoo1/machineverse.git
+cd machineverse
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+Then open http://localhost:5173/.
