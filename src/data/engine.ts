@@ -333,4 +333,107 @@ export const engineComponents: EngineComponent[] = [
     status: 'draft',
     sources: [],
   },
+
+    {
+    id: 'intake-manifold',
+    name: 'Intake manifold',
+    systemId: 'air-and-fuel',
+    location:
+      'Bolted to the side of the cylinder head, between the throttle body and the intake ports.',
+    summary: 'A set of pipes that carries air from the throttle to each cylinder.',
+    explanation: {
+      beginner:
+        'The intake manifold is a set of pipes that delivers the air the engine breathes to each of its cylinders. Air enters through the air filter and the throttle, then the manifold divides it up and sends a share to each cylinder.',
+      intermediate:
+        'Air passes through the air filter and the throttle body, which is the valve controlled by the accelerator pedal, and then into a chamber called the plenum. Individual pipes called runners lead from the plenum to the intake port of each cylinder. The manifold is shaped so that each cylinder receives about the same amount of air. On many engines it is made of plastic, which is light and helps keep the incoming air cooler.',
+      advanced:
+        'The length and diameter of the runners tune the pressure waves in the intake, so that a pulse of higher pressure arrives at the valve just as it opens. Long runners favour low-rpm torque and short runners favour high-rpm power, and some engines switch between two runner lengths. Vacuum in the manifold is also used to power the brake booster on many petrol engines, so a leak affects more than the air supply. On a turbocharged engine the intake runs above atmospheric pressure after the compressor, so the manifold and its seals must withstand boost.',
+    },
+    whyItExists:
+      'Every cylinder needs its own share of air at the right moment, and the manifold is the plumbing that distributes it evenly.',
+    relatedIds: ['cylinder-head', 'fuel-injector', 'valves'],
+    ifItFails: {
+      effect:
+        'A leaking manifold or gasket lets unmeasured air into the engine, which upsets the air-fuel mixture. The engine then runs roughly and may set a fault code.',
+      symptoms: [
+        'Rough or unstable idle',
+        'Hissing sound from the engine bay',
+        'Check-engine light, often for a lean mixture',
+        'Loss of power',
+        'Poor fuel economy',
+      ],
+    },
+    status: 'draft',
+    sources: [],
+  },
+  {
+    id: 'fuel-injector',
+    name: 'Fuel injector',
+    systemId: 'air-and-fuel',
+    location:
+      'In a port-injection engine, one injector per cylinder sits in the intake port, connected to a shared fuel rail.',
+    summary:
+      'An electrically controlled nozzle that sprays a measured amount of fuel into the engine.',
+    explanation: {
+      beginner:
+        'The fuel injector is a small electric nozzle that sprays a fine mist of fuel into the air going into the engine. The engine computer decides exactly how much to spray, so the mixture of air and fuel is right for the driving conditions.',
+      intermediate:
+        'Fuel is held under pressure in a rail, and the engine computer opens each injector for a few thousandths of a second. The longer it stays open, the more fuel is delivered. The computer works out the amount from sensor readings, such as how much air is entering and how much oxygen is left in the exhaust. In a port-injection engine the injector sprays into the intake port behind the intake valve, while a direct-injection engine sprays straight into the cylinder.',
+      advanced:
+        'The usual target is a stoichiometric mixture, about 14.7 parts of air to one part of petrol by mass, which lets the catalytic converter clean the exhaust effectively. The computer enriches the mixture for cold starts and high load. Injectors are rated by how much fuel they flow at a given pressure. When boost is added, the injectors must supply more fuel or the mixture runs lean, which raises combustion temperatures and the risk of engine damage. Direct injection works at much higher pressure than port injection and cools the incoming charge as the fuel evaporates, which helps resist knock.',
+    },
+    whyItExists:
+      'Engines need the right amount of fuel mixed with the air at every moment, and an electronically controlled injector measures it more precisely than older carburettors could.',
+    relatedIds: ['intake-manifold', 'cylinder-head', 'spark-plug'],
+    ifItFails: {
+      effect:
+        'A clogged injector delivers too little fuel and a leaking one delivers too much. Either way the air-fuel mixture is wrong, which causes rough running and can damage the engine or the catalytic converter.',
+      symptoms: [
+        'Rough idle',
+        'Misfire on one cylinder',
+        'Hesitation when accelerating',
+        'Poor fuel economy',
+        'Smell of fuel',
+        'Hard starting',
+      ],
+    },
+    safetyNote:
+      'Fuel is highly flammable, and the fuel system stays under pressure even when the engine is off. Do not open fuel lines or work on injectors yourself. Take fuel system problems to a professional.',
+    status: 'draft',
+    sources: [],
+  },
+  {
+    id: 'exhaust-manifold',
+    name: 'Exhaust manifold',
+    systemId: 'exhaust',
+    location: 'Bolted to the side of the cylinder head, where the exhaust ports are.',
+    summary:
+      'A set of pipes that collects burnt gas from every cylinder and funnels it into the exhaust pipe.',
+    explanation: {
+      beginner:
+        'The exhaust manifold collects the hot burnt gas pushed out of each cylinder and combines it into a single pipe. From there the gas flows through the rest of the exhaust system and out of the back of the car.',
+      intermediate:
+        'Each exhaust port of the cylinder head connects to a pipe, and these pipes merge into one outlet that leads on to the catalytic converter. The manifold gets extremely hot, so it is made of cast iron or stainless steel. The shape of the pipes matters: smooth, evenly sized pipes let the gas leave more easily, which helps the engine make more power.',
+      advanced:
+        'Exhaust gas leaves each cylinder in pulses. A well-designed header, with separate primary pipes of equal length, uses the pulse from one cylinder to help pull gas out of the next, an effect called scavenging. A simple cast manifold is cheaper and quieter but restricts the flow more. On a turbocharged engine the manifold also feeds exhaust gas to the turbine, so its shape and strength affect how quickly the turbo responds, and it must survive higher temperatures. Cracks and leaking gaskets are common failures because of the repeated heating and cooling.',
+    },
+    whyItExists:
+      'Burnt gas from several separate cylinders has to be gathered into one pipe, and getting it out smoothly makes the engine more efficient.',
+    relatedIds: ['cylinder-head', 'valves'],
+    ifItFails: {
+      effect:
+        'A cracked manifold or leaking gasket lets hot exhaust gas escape before it reaches the catalytic converter. This causes noise and fault codes, and it can let dangerous exhaust fumes into the car.',
+      symptoms: [
+        'Ticking or tapping noise, especially when the engine is cold',
+        'Loud exhaust sound',
+        'Smell of exhaust inside the car',
+        'Check-engine light',
+        'Loss of power',
+      ],
+    },
+    safetyNote:
+      'Exhaust gas contains carbon monoxide, which is poisonous and has no smell. Never run an engine in a closed garage, and if you smell exhaust inside the car, open the windows and have it checked straight away. The manifold stays hot for a long time after the engine stops, so do not touch it.',
+    status: 'draft',
+    sources: [],
+  },
 ]
