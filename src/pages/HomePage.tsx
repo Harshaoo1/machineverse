@@ -1,4 +1,4 @@
-import { Link } from 'react-router'
+import CategoryCard from '../components/CategoryCard'
 
 type Category = {
   id: string
@@ -24,17 +24,12 @@ function HomePage() {
       <h2>Choose a category</h2>
       <ul className="categories">
         {categories.map((category) => (
-          <li key={category.id}>
-            {category.available ? (
-              <Link to="/vehicle">
-                {category.icon} {category.name}
-              </Link>
-            ) : (
-              <span>
-                {category.icon} {category.name} (coming soon)
-              </span>
-            )}
-          </li>
+          <CategoryCard
+            key={category.id}
+            icon={category.icon}
+            name={category.name}
+            available={category.available}
+          />
         ))}
       </ul>
     </>

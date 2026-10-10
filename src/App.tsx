@@ -1,16 +1,12 @@
-import { Link, Route, Routes } from 'react-router'
+import { Route, Routes } from 'react-router'
+import Navbar from './components/Navbar'
 import HomePage from './pages/HomePage'
 import VehiclePage from './pages/VehiclePage'
 
 function App() {
   return (
     <>
-      <header>
-        <nav>
-          <Link to="/">MachineVerse</Link>
-          <Link to="/vehicle">Car</Link>
-        </nav>
-      </header>
+      <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
