@@ -15,7 +15,7 @@ function VehiclePage() {
   return (
     <>
       <h1>Generic Car: Engine</h1>
-      <EngineViewer />
+      <EngineViewer selectedId={selectedId} onSelect={setSelectedId} />
 
       <div role="group" aria-label="Explanation level" className="levels">
         {levels.map((option) => (
