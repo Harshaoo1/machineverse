@@ -89,7 +89,7 @@ function EngineViewer({ selectedId, onSelect }: EngineViewerProps) {
         role="img"
         aria-label="Interactive 3D diagram of a four-cylinder petrol engine. Use the component buttons below to select parts with a keyboard."
       >
-        <Canvas camera={{ position: [4, 3, 7], fov: 45 }}>
+        <Canvas camera={{ position: [3.2, 2.2, 5.2], fov: 45 }}>
           <ambientLight intensity={0.6} />
           <directionalLight position={[5, 5, 5]} intensity={1.5} />
           <group
@@ -106,7 +106,7 @@ function EngineViewer({ selectedId, onSelect }: EngineViewerProps) {
               />
             ))}
           </group>
-          <OrbitControls target={[0, 0.4, 0]} />
+          <OrbitControls target={[0, 0.4, 0]} minDistance={3} maxDistance={14} />
         </Canvas>
       </div>
       <p className="viewer-hint">

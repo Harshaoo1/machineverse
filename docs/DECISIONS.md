@@ -29,3 +29,7 @@ Written by us, not generated, so safety rules can be guaranteed. Only low-risk c
 ## 2026-10-11: Visual direction is a dark engineering blueprint
 
 Dark navy background with a faint grid, thin borders, a cyan accent for interactive elements and yellow for the selected part. The 3D engine is labelled as a simplified schematic, because it is built from basic shapes and is not a realistic or exact model.
+
+## 2026-10-11: Visual direction changed to neo-brutalist black and white
+
+Replaces the dark blueprint theme. Thick black borders, hard shadows, uppercase bold type and monospace labels, with colour kept only in the 3D engine, the selection highlight and the safety hazard stripe. Chosen for a raw, memorable feel rather than a corporate one, while keeping body text plain and high-contrast.

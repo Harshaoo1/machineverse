@@ -15,11 +15,26 @@ const categories: Category[] = [
   { id: 'space', icon: '🚀', name: 'Space', available: false },
 ]
 
+const tickerText = 'Understand // Explore // Experiment //'
+
 function HomePage() {
   return (
     <>
-      <h1>MachineVerse</h1>
-      <p>Understand. Explore. Experiment.</p>
+      <section className="hero">
+        <h1>MachineVerse</h1>
+        <p className="tagline">Understand. Explore. Experiment.</p>
+        <span className="sticker" aria-hidden="true">
+          v0.1 / draft
+        </span>
+      </section>
+
+      <div className="ticker" aria-hidden="true">
+        <div className="ticker-track">
+          {Array.from({ length: 8 }, (_, index) => (
+            <span key={index}>{tickerText}</span>
+          ))}
+        </div>
+      </div>
 
       <h2>Choose a category</h2>
       <ul className="categories">
