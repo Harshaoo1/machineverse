@@ -1,8 +1,10 @@
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import InfoPanel from '../components/InfoPanel'
 import { engineComponents } from '../data/engine'
 import type { Level } from '../data/types'
-import EngineViewer from '../components/EngineViewer'
+
+// Loaded only when this page opens, so the 3D library is not part of the first download
+const EngineViewer = lazy(() => import('../components/EngineViewer'))
 
 const levels: Level[] = ['beginner', 'intermediate', 'advanced']
 
@@ -15,7 +17,12 @@ function VehiclePage() {
   return (
     <>
       <h1>Generic Car: Engine</h1>
-      <EngineViewer selectedId={selectedId} onSelect={setSelectedId} />
+
+      <Suspense
+        fallback={<div className="viewer viewer-loading">Loading 3D view...</div>}
+      >
+        <EngineViewer selectedId={selectedId} onSelect={setSelectedId} />
+      </Suspense>
 
       <div role="group" aria-label="Explanation level" className="levels">
         {levels.map((option) => (

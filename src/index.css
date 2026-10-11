@@ -80,10 +80,45 @@ button[aria-pressed='true'] {
 }
 
 .viewer {
-  height: 30rem;
+  height: clamp(18rem, 60vh, 32rem);
   margin: 1rem 0;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   overflow: hidden;
   background: #f4f4f4;
+}
+
+.viewer-loading {
+  display: grid;
+  place-items: center;
+  color: #666;
+}
+
+.viewer-hint {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-swatch {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 0.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
 }

@@ -3,7 +3,7 @@ import { Canvas } from '@react-three/fiber'
 import type { ThreeEvent } from '@react-three/fiber'
 import { OrbitControls, useCursor } from '@react-three/drei'
 import type { Intersection } from 'three'
-import { engineComponents } from '../data/engine'
+import { engineComponents, engineSystems } from '../data/engine'
 import { engineParts, systemColors } from '../data/engineLayout'
 import type { Part } from '../data/engineLayout'
 
@@ -82,28 +82,48 @@ function EngineViewer({ selectedId, onSelect }: EngineViewerProps) {
     setHoveredId(pickComponentId(event.intersections))
   }
 
-  return (
-    <div className="viewer">
-      <Canvas camera={{ position: [4, 3, 7], fov: 45 }}>
-        <ambientLight intensity={0.6} />
-        <directionalLight position={[5, 5, 5]} intensity={1.5} />
-        <group
-          onClick={handleClick}
-          onPointerMove={handleMove}
-          onPointerOut={() => setHoveredId(null)}
-        >
-          {engineParts.map((part, index) => (
-            <EnginePart
-              key={index}
-              part={part}
-              selected={part.componentId === selectedId}
-              hovered={part.componentId === hoveredId}
+   return (
+    <>
+      <div
+        className="viewer"
+        role="img"
+        aria-label="Interactive 3D diagram of a four-cylinder petrol engine. Use the component buttons below to select parts with a keyboard."
+      >
+        <Canvas camera={{ position: [4, 3, 7], fov: 45 }}>
+          <ambientLight intensity={0.6} />
+          <directionalLight position={[5, 5, 5]} intensity={1.5} />
+          <group
+            onClick={handleClick}
+            onPointerMove={handleMove}
+            onPointerOut={() => setHoveredId(null)}
+          >
+            {engineParts.map((part, index) => (
+              <EnginePart
+                key={index}
+                part={part}
+                selected={part.componentId === selectedId}
+                hovered={part.componentId === hoveredId}
+              />
+            ))}
+          </group>
+          <OrbitControls target={[0, 0.4, 0]} />
+        </Canvas>
+      </div>
+      <p className="viewer-hint">
+        Drag to rotate, scroll to zoom, click a part to learn about it. Selected parts turn yellow.
+      </p>
+      <ul className="legend" aria-label="Colour key">
+        {engineSystems.map((system) => (
+          <li key={system.id}>
+            <span
+              className="legend-swatch"
+              style={{ backgroundColor: systemColors[system.id] }}
             />
-          ))}
-        </group>
-        <OrbitControls target={[0, 0.4, 0]} />
-      </Canvas>
-    </div>
+            {system.name}
+          </li>
+        ))}
+      </ul>
+    </>
   )
 }
 
