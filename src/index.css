@@ -80,7 +80,7 @@ button[aria-pressed='true'] {
 }
 
 .viewer {
-  height: 24rem;
+  height: 30rem;
   margin: 1rem 0;
   border: 1px solid #ddd;
   border-radius: 0.5rem;
