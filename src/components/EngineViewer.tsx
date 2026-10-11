@@ -110,7 +110,7 @@ function EngineViewer({ selectedId, onSelect }: EngineViewerProps) {
         </Canvas>
       </div>
       <p className="viewer-hint">
-        Drag to rotate, scroll to zoom, click a part to learn about it. Selected parts turn yellow.
+        Drag to rotate, scroll to zoom, click a part to learn about it. Selected parts turn yellow. Simplified schematic, not to scale.
       </p>
       <ul className="legend" aria-label="Colour key">
         {engineSystems.map((system) => (

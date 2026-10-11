@@ -25,3 +25,7 @@ Every number is tagged as formula-based, rule of thumb, or AI explanation. Educa
 ## 2026-10-09: Diagnosis is a hand-written decision tree
 
 Written by us, not generated, so safety rules can be guaranteed. Only low-risk checks are suggested, and dangerous systems (fuel, high voltage) are referred to professionals.
+
+## 2026-10-11: Visual direction is a dark engineering blueprint
+
+Dark navy background with a faint grid, thin borders, a cyan accent for interactive elements and yellow for the selected part. The 3D engine is labelled as a simplified schematic, because it is built from basic shapes and is not a realistic or exact model.
