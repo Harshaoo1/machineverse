@@ -2,6 +2,7 @@ import { lazy, Suspense, useState } from 'react'
 import InfoPanel from '../components/InfoPanel'
 import { engineComponents } from '../data/engine'
 import type { Level } from '../data/types'
+import './vehicle.css'
 
 // Loaded only when this page opens, so the 3D library is not part of the first download
 const EngineViewer = lazy(() => import('../components/EngineViewer'))
@@ -18,7 +19,7 @@ function VehiclePage() {
     <>
       <h1>Generic Car: Engine</h1>
 
-      <div className="vehicle-layout">
+      <div className="vehicle-page">
         <section aria-label="3D engine view">
           <Suspense
             fallback={<div className="viewer viewer-loading">Loading 3D view...</div>}
@@ -38,6 +39,7 @@ function VehiclePage() {
                   {item.name}
                 </button>
               </li>
+              
             ))}
           </ul>
         </section>

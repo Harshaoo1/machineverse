@@ -1,0 +1,21 @@
+:root {
+  color-scheme: light;
+
+  /* Colour (taken from the prototype) */
+  --ink: #161616;
+  --muted: #686868;
+  --accent: #dfff65;
+  --paper: #ffffff;
+  --line: #e4e6dc;
+  --line-strong: #cfd4c2;
+  --accent-soft: #f8ffe5;
+  --accent-line: #d7ee9a;
+  --sketch: #7f8b6c;
+
+  /* Type */
+  --font-body: 'Inter Variable', Inter, 'Helvetica Neue', Arial, sans-serif;
+
+  /* Shape */
+  --radius-pill: 999px;
+  --radius-card: 15px;
+}

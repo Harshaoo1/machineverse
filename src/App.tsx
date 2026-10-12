@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="site-main">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/vehicle" element={<VehiclePage />} />
