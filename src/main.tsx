@@ -4,11 +4,13 @@ import { BrowserRouter } from 'react-router'
 import '@fontsource-variable/inter'
 import './index.css'
 import App from './App'
-
+import IntroGate from './components/intro/IntroGate'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <App />
-    </BrowserRouter>
+  <IntroGate>
+    <App />
+  </IntroGate>
+</BrowserRouter>
   </StrictMode>,
 )
